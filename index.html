@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love ❤️</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="floating-hearts-container"></div>
+    <div class="container">
+        <div class="anniversary-text">✨Happy 1 Year Anniversary Baby!💝✨</div>
+        <div class="envelope" id="envelope">
+            <div class="letter" id="letter">
+                <div class="letter-content">
+                    <h1>Happy 1 Year Anniversary Baby!💕</h1>
+                    <p>To My Beloved Princess 💕,</p>
+                    <p>Happy 1 year anniversary baby. This 12 months is truely very special to me. Thank you for being there with me, stay with me and love me. I promise to love you, take care for you, protect you, cherish you the way you deserve. I will always be there for you, no matter what. I will always love you and support you. I will always be by your side. </p>
+                    <p>Thank you for coming to my life. You're the best girlfriend i could've asked for. I love everything about you. Your smile, Your kindess, Your laugh, Your eyes, Your hugs and kisses, Your goofyness, Your humour, Your energy, Your cuteness, Your understanding and forgiving, Your smell, Your love, and so much more I love about you.</p>
+                    <p>Since you are currently in europe, I decided to make this message a bit special way for you hehe. MAUHHHHHHHHHHHHHHHHHH Sending love kiss and hug to you my babyyyyyyyyyyyyy 💖. <br>Forever my princess bubu.💖</p>
+                    <p>Thank you for being the most amazing girlfriend anyone could ever wish for. You make every day special just by being you! 💖</p>
+                
+                    <p class="signature">Forever Yours,<br>With all my love and heart 💝</p>
+                </div>
+            </div>
+            <div class="front">
+                <div class="top-flap"></div>
+                <div class="body">
+                    <div class="heart-decoration">💕</div>
+                </div>
+                <div class="left-flap"></div>
+                <div class="right-flap"></div>
+            </div>
+            <div class="instructions">Click the envelope to open</div>
+        </div>
+        <div class="photo-gallery">
+            <img src="j4.jpg" class="floating-photo" alt="Us 1">
+            <img src="j5.jpg" class="floating-photo" alt="Us 2">
+            <img src="j6.jpg" class="floating-photo" alt="Us 3">
+            <img src="j7.jpg" class="floating-photo" alt="Us 4">
+            <img src="j8.jpg" class="floating-photo" alt="Us 5">
+            <img src="j8.jpg" class="floating-photo" alt="Us 5b">
+            <img src="j9.jpg" class="floating-photo" alt="Us 6">
+            <img src="j10.jpg" class="floating-photo" alt="Us 7">
+            <img src="j11.jpg" class="floating-photo" alt="Us 8">
+            <img src="j11.jpg" class="floating-photo" alt="Us 8b">
+            <img src="j12.jpg" class="floating-photo" alt="Us 9">
+            <img src="j13.jpg" class="floating-photo" alt="Us 10">
+            <img src="j14.jpg" class="floating-photo" alt="Us 11">
+            <img src="j15.jpg" class="floating-photo" alt="Us 12">
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        // Create floating hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'floating-heart';
+            const hearts = ['💖', '💝', '💕', '💗', '💓'];
+            heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 5) + 's';
+            heart.style.fontSize = (Math.random() * 10 + 15) + 'px';
+            document.getElementById('floating-hearts-container').appendChild(heart);
+            
+            // Remove heart after animation
+            heart.addEventListener('animationend', () => heart.remove());
+        }
+
+        // Create hearts periodically
+        setInterval(createHeart, 300);
+        
+        // Create initial hearts
+        for(let i = 0; i < 15; i++) {
+            setTimeout(createHeart, i * 200);
+        }
+    </script>
+</body>
+</html> 
